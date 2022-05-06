@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+  <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Custom plugins -->
+  <script src="js/adaptiveGallery.js"></script>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+
+</head>
+<body>
+
+  <div class="product-product container-fluid p-0">
+    <header>
+      <div class="container">
+  
+        <div class="row align-items-center">
+  
+          <div class="col-12 col-lg-6 btn-group nav-panel" role="group" aria-label="Basic outlined example">
+  
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCat" aria-controls="offcanvasRight">
+              <span>Категории</span>
+            </button>
+  
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasRight">
+              <i class="bi bi-cart"></i>
+            </button>
+  
+            <button type="button"  class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAccount" aria-controls="offcanvasRight">
+              <i class="bi bi-person"></i>
+            </button>
+  
+            <button type="button"  class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasRight">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+  
+         <!-- Cart -->
+         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Корзина</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul>
+              <li>
+                <table class="table">
+                    <tr>
+                      <td class="text-center">
+                        <a href="product.html">
+                          <img src="image/1.jpg" class="img-fluid">
+                        </a>
+                      </td>
+                      <td class="text-left">
+                        <a href="product.html">Название товара</a>
+                      </td>
+                      <td class="text-right">x 1</td>
+                      <td class="text-right">Итого: 100.00р</td>
+                      <td class="text-center">
+                        <button type="button" class="btn btn-danger btn-xs">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                </table>
+              </li>
+              <li>
+                <div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="text-right"><strong>Итго</strong></td>
+                      <td class="text-right">Всего</td>
+                    </tr>
+                    <tr>
+                      <td>100.00</td>
+                      <td>100.00</td>
+                    </tr>
+                  </table>
+                  <p class="text-right">
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="{{ checkout }}"><strong><i class="fa fa-share"></i>Оформление заказа</strong></a></p>
+                </div>
+              </li>
+            </ul>
+      
+          </div>
+        </div>
+  
+          <!-- Account -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAccount" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Аккаунт</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="about_us.html">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pay_info.html">Вход</a>
+                </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+         <!-- Navigation -->
+         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Навигация</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about_us.html">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pay_info.html">Оплата</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">DEMO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">DEMO</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+          
+          <!-- Category -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCat" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="navbar">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="category.html">Категория №1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="category.html">Категория №2</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Категория №3
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="category.html">Категория №1</a></li>
+                        <li><a class="dropdown-item" href="category.html">Категория №2</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="category.html">Категория №3</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">Категория №4</a>
+                    </li>
+                  </ul>
+          
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+            </div>
+          </div>
+  
+      </div>
+    </header>
+  
+
+    <main>
+      <div class="container">
+        <div class="product-layout">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <img src="image/1.jpg" class="img-fluid" alt="">
+
+              <ul class="nav nav-pills m-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Характеристики</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Отзывы</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Название</th>
+                        <th scope="col">Значени</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Цвет</td>
+                        <td>Красный</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Вес</td>
+                        <td>0,5кг</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  
+                  <ul>
+                    <li>
+                      <h3>Имя</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat expedita aperiam, sit eaque id earum quaerat deleniti temporibus nisi!</p>
+                    </li>
+                    <hr>
+                    <li>
+                      <h3>Имя</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat expedita aperiam, sit eaque id earum quaerat deleniti temporibus nisi!</p>
+                    </li>
+                    <hr>
+                    <li>
+                      <h3>Имя</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt placeat expedita aperiam, sit eaque id earum quaerat deleniti temporibus nisi!</p>
+                    </li>
+                    <hr>
+                  </ul>
+
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Имя</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ваше имя">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Отзыв</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-6 pt-3">
+              <h1>Название товара</h1>
+              <hr>
+              <span>Производитель: Россия</span>
+              <br>
+              <span>Наличие: В наличии</span>
+              <hr>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, quo, laborum quia facilis quis laudantium, soluta nam iure velit itaque optio quam ab reiciendis architecto. Labore iure beatae, dignissimos doloremque laudantium ducimus, vitae neque harum totam quis et magnam ipsum eum deleniti? Esse, porro quibusdam dolorum commodi iure totam non.</p>
+              <hr>
+              <h2><small><s>500.00р</s></small>/600.00р</h2>
+              <input type="text" class="form-control mb-2" placeholder="Количество" aria-label="Username">
+              <button class="btn w-100" >Купить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <footer class="mb-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="index.html">
+            <h1 class="text-center text-lg-start">Miraflores</h1>
+            <span>Мирофлорес © Copyright, 2018</span>
+          </a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
